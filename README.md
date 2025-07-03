@@ -1,4 +1,4 @@
-# Props Practice (React)
+# Second React Project
 
 ## Installation
 
