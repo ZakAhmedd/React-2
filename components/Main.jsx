@@ -17,6 +17,7 @@ export default function Main() {
   }
 
   const [recipe, setRecipe] = React.useState("");
+  const recipeSection = React.useRef(null)
 
   async function getRecipe() {
     const recipeMarkdown = await getRecipeFromMistral(ingredients)
@@ -37,6 +38,7 @@ export default function Main() {
 
       {ingredients.length > 0 && (
         <IngredientsList
+          ref={recipeSection}
           ingredients={ingredients}
           getRecipe={getRecipe}
         />
