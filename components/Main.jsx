@@ -19,6 +19,12 @@ export default function Main() {
   const [recipe, setRecipe] = React.useState("");
   const recipeSection = React.useRef(null)
 
+  React.useEffect(() => {
+    if (recipe !== "" && recipeSection !== null) {
+      recipeSection.current.scrollIntoView()
+    }
+  }, [recipe])
+
   async function getRecipe() {
     const recipeMarkdown = await getRecipeFromMistral(ingredients)
     setRecipe(recipeMarkdown)
