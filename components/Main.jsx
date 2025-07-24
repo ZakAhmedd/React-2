@@ -11,18 +11,9 @@ export default function Main() {
     "cream"
   ]);
 
-  // function addIngredient(formData) {
-  //   const newIngredient = formData.get("ingredient");
-  //   setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
-  // }
-
-  function addIngredient(event) {
-    event.preventDefault(); // stop normal form submit / reload
-    const formData = new FormData(event.target);
-    const newIngredient = formData.get("ingredient").trim();
-    if (!newIngredient) return; // ignore empty
+  function addIngredient(formData) {
+    const newIngredient = formData.get("ingredient");
     setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
-    event.target.reset(); // clear the input
   }
 
   const [recipe, setRecipe] = React.useState("");
