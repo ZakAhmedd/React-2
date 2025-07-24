@@ -1,4 +1,5 @@
 # Second React Project
+Chef Claude app. Generated a recipe from user chosen ingredients.
 
 ## Installation
 
@@ -13,3 +14,5 @@
 ## Start the server
 
 npm start
+
+## App uses HuggingFace AI to generate the recipe.
