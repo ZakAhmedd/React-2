@@ -4,12 +4,7 @@ import ClaudeRecipe from "./ClaudeRecipe";
 import { getRecipeFromMistral } from "../ai"
 
 export default function Main() {
-  const [ingredients, setIngredients] = React.useState([
-    "pasta",
-    "chicken",
-    "cheese",
-    "cream"
-  ]);
+  const [ingredients, setIngredients] = React.useState([]);
 
   function addIngredient(formData) {
     const newIngredient = formData.get("ingredient");
