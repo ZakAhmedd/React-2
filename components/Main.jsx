@@ -27,7 +27,7 @@ export default function Main() {
 
   return (
     <main>
-      <form action={addIngredient} className="add-ingredient-form">
+      {/* <form action={addIngredient} className="add-ingredient-form">
         <input
           type="text"
           placeholder="e.g. oregano"
@@ -35,7 +35,25 @@ export default function Main() {
           name="ingredient"
         />
         <button>Add ingredient</button>
+      </form> */}
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          addIngredient(new FormData(e.target));
+          e.target.reset(); // Optional: clear the input after adding
+        }}
+        className="add-ingredient-form"
+      >
+        <input
+          type="text"
+          placeholder="e.g. oregano"
+          aria-label="Add ingredient"
+          name="ingredient"
+        />
+        <button type="submit">Add ingredient</button>
       </form>
+
 
       {ingredients.length > 0 && (
         <IngredientsList
